@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
     <link rel="icon" href="img/favicon.jpg" type="image/x-icon">
-    <title>pf4-하이트진로</title>
+    <title>pf4-하이트진로-include</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,8 +22,8 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
     <script type="text/javascript"> 
         $(document).ready(function(){
-	       
-            // 목록항목의 p와 a를 둘러싸시오
+            function doc(){   
+                // 목록항목의 p와 a를 둘러싸시오
                 $("#product ul.list li").each(function(){// each()는 앞요소갯수만큼 순차적으로 실행하시오; 
                     $(this).children("p,a").wrapAll("<div class='wtext'></div>"); 
                     // wrapAll('<태그></태그');앞요소를 둘러싸시오(괄호안의 태그로)
@@ -249,8 +249,10 @@
                 $("footer .btop").click(function(){
                     $("html,body").animate({scrollTop:0},1000);//문서스크롤 애니
                 });
-            
-            $("#top").load("header.html");
+            }
+            $("#top").load("header.html",function(){
+                doc();
+            });
             $("footer").load("footer.html");
         });
     </script> 
