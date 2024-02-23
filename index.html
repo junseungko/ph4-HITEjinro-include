@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
     <link rel="icon" href="img/favicon.jpg" type="image/x-icon">
-    <title>pf4-하이트진로</title>
+    <title>pf4-하이트진로-include</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,8 +22,8 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
     <script type="text/javascript"> 
         $(document).ready(function(){
-	       
-            // 목록항목의 p와 a를 둘러싸시오
+            function doc(){   
+                // 목록항목의 p와 a를 둘러싸시오
                 $("#product ul.list li").each(function(){// each()는 앞요소갯수만큼 순차적으로 실행하시오; 
                     $(this).children("p,a").wrapAll("<div class='wtext'></div>"); 
                     // wrapAll('<태그></태그');앞요소를 둘러싸시오(괄호안의 태그로)
@@ -249,14 +249,17 @@
                 $("footer .btop").click(function(){
                     $("html,body").animate({scrollTop:0},1000);//문서스크롤 애니
                 });
-            
-            $("#top").load("header.html");
+            };
+            $("#top").load("header.html",function(){
+                doc();
+            });
+            $("#subtitle").load("subtitle.html");
             $("footer").load("footer.html");
         });
     </script> 
     <!-- slick -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script type="text/javascript">
         $(document).ready(function(){
@@ -368,20 +371,7 @@
    <!-- 상단영역 -->
    <header id="top"> </header>
    <!-- 타이틀영역 -->
-   <div id="subtitle" class="height-full">
-        <div class="titleani wrap height-full">
-            <img src="img/i1.jpg" alt="켈리 포스터">
-            <img src="img/i2.jpg" alt="테라 포스터">
-            <img src="img/i3.jpg" alt="참이슬 포스터">
-            <img src="img/i4.jpg" alt="진로 포스터">
-            <img src="img/i5.jpg" alt="필라이트 포스터">
-            <img src="img/i6.jpg" alt="일품진로 OAK43 포스터">
-            <img src="img/i7.jpg" alt="일품진로 포스터">
-            <img src="img/i8.jpg" alt="진로1924 포스터">
-            <img src="img/i9.jpg" alt="매화수 포스터">
-            <img src="img/i10.jpg" alt="에스라이트 포스터">
-        </div>
-   </div>
+   <div id="subtitle" class="height-full"></div>
    <!-- 메인영역 -->
    <main>
         <section id="product">
